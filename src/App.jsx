@@ -10,8 +10,15 @@ import Prodotti from './pages/Prodotti';
 function App() {
 
   return (
-    <>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MyLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/chiSiamo" element={<ChiSiamo />} />
+          <Route path="/products" element={<Prodotti />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
