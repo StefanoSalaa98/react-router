@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
 
 header ul {
@@ -19,4 +20,43 @@ header a {
 
 header a.active {
   color: blue;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .card {
+    width: calc((100% - 40px) / 3);
+    background-color: lightgrey;
+
+    .image {
+      padding-top: 20px;
+      width: 70%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+      }
+
+    }
+
+    h2 {
+      padding: 0 10px;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
 }
