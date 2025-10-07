@@ -1,16 +1,42 @@
+import { useState, useEffect } from "react";
 // importo l'hook per poter leggere il parametro
 import { useParams } from "react-router-dom";
+import axios from "axios"
+import { Link } from "react-router-dom";
+
 
 const Prodotto = () => {
 
     // recupero il parametro dinamico id
     const { id } = useParams();
 
+    // stato del componente (prodotto che è stato cliccato)
+    const [product, setProduct] = useState();
+
+    useEffect(() => {
+        axios.get(`https://fakestoreapi.com/products/${id}`)
+            .then(res => setProduct(res.data))
+            .catch(err => console.log(err)
+            )
+    }, [])
+
     return (
-        <>
-            <h2>Sezione dettaglio Prodotto</h2>
-            <h3>ID prodotto: {id}</h3>
-        </>
+        <div>
+            {product ? (
+                <div className="prodotto" >
+                    <h2>{product.title}</h2>
+                    <strong>{product.price} €</strong>
+                    <span>CATEGORY: {product.category}</span>
+                    <div className="image">
+                        <img src={product.image} alt="" />
+                    </div>
+                    <p>{product.description}</p>
+                </div>
+            )
+                :
+                (<p>Loading...</p>)
+            }
+        </div>
     )
 }
 
