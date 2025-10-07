@@ -27,10 +27,14 @@ const Prodotto = () => {
                     <h2>{product.title}</h2>
                     <strong>{product.price} €</strong>
                     <span>CATEGORY: {product.category}</span>
-                    <div className="image">
-                        <img src={product.image} alt="" />
+                    <div className="container">
+                        <div className="image">
+                            <img src={product.image} alt="" />
+                        </div>
+                        <div className="descrizione">
+                            <p>{product.description}</p>
+                        </div>
                     </div>
-                    <p>{product.description}</p>
                 </div>
             )
                 :
