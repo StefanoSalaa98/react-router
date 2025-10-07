@@ -29,6 +29,11 @@ header a.active {
   flex-wrap: wrap;
   gap: 20px;
 
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+
   .card {
     width: calc((100% - 40px) / 3);
     background-color: lightgrey;
