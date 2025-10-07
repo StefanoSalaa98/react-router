@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import ChiSiamo from './pages/ChiSiamo';
 import Prodotti from './pages/Prodotti';
 import Prodotto from "./pages/Prodotto";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="" element={<Prodotti />} />
             <Route path=":id" element={<Prodotto />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter >
