@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import axios from "axios"
 import Product from '../components/product';
 
@@ -28,6 +29,9 @@ const Prodotti = () => {
                         price={product.price}
                         category={product.category}
                     />
+                    <Link to={`/products/${product.id}`}>
+                        Dettaglio prodotto
+                    </Link>
                 </div>
             )}
         </div>
