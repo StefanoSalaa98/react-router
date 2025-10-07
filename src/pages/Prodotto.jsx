@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // importo l'hook per poter leggere il parametro
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios"
 
 
@@ -43,6 +44,9 @@ const Prodotto = () => {
                             <p>{product.description}</p>
                         </div>
                     </div>
+                    <Link to={"/products"}>
+                        Lista prodotti
+                    </Link>
                 </div>
             )
                 :
